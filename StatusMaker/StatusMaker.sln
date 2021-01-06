@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatusMaker", "StatusMaker\StatusMaker.csproj", "{8BB5DF67-E14C-443D-B979-9562FCF33DBC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BB5DF67-E14C-443D-B979-9562FCF33DBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BB5DF67-E14C-443D-B979-9562FCF33DBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BB5DF67-E14C-443D-B979-9562FCF33DBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BB5DF67-E14C-443D-B979-9562FCF33DBC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7440525F-824B-49C8-99E1-04531E9B8767}
+	EndGlobalSection
+EndGlobal
