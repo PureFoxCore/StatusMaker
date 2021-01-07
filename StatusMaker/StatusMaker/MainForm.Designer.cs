@@ -38,9 +38,6 @@ namespace StatusMaker
             this.quitStatusMakerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.ProgramNameLabel = new System.Windows.Forms.Label();
-            this.StateBox = new System.Windows.Forms.TextBox();
-            this.StateLabel = new System.Windows.Forms.Label();
-            this.StatePanel = new System.Windows.Forms.Panel();
             this.LargeKeyPanel = new System.Windows.Forms.Panel();
             this.LargeKeyLabel = new System.Windows.Forms.Label();
             this.LargeKeyBox = new System.Windows.Forms.TextBox();
@@ -57,15 +54,21 @@ namespace StatusMaker
             this.DetailsLabel = new System.Windows.Forms.Label();
             this.DetailsBox = new System.Windows.Forms.TextBox();
             this.OptionsPanel = new System.Windows.Forms.Panel();
-            this.ButtonsPanel = new System.Windows.Forms.Panel();
             this.HasTimeCheckBox = new System.Windows.Forms.CheckBox();
+            this.ButtonsPanel = new System.Windows.Forms.Panel();
+            this.UpdateButton = new System.Windows.Forms.Button();
             this.LaunchButton = new System.Windows.Forms.Button();
-            this.SaveButton = new System.Windows.Forms.Button();
             this.LoadButton = new System.Windows.Forms.Button();
-            this.RestartButton = new System.Windows.Forms.Button();
+            this.SaveButton = new System.Windows.Forms.Button();
+            this.StateBox = new System.Windows.Forms.TextBox();
+            this.StateLabel = new System.Windows.Forms.Label();
+            this.StatePanel = new System.Windows.Forms.Panel();
+            this.ClientIdPanel = new System.Windows.Forms.Panel();
+            this.CliendIdLabel = new System.Windows.Forms.Label();
+            this.CliendIdBox = new System.Windows.Forms.TextBox();
+            this.InfoLabel = new System.Windows.Forms.Label();
             this.TrayStripMenu.SuspendLayout();
             this.TopPanel.SuspendLayout();
-            this.StatePanel.SuspendLayout();
             this.LargeKeyPanel.SuspendLayout();
             this.LargeTextPanel.SuspendLayout();
             this.SmallTextPanel.SuspendLayout();
@@ -73,6 +76,8 @@ namespace StatusMaker
             this.DetailsPanel.SuspendLayout();
             this.OptionsPanel.SuspendLayout();
             this.ButtonsPanel.SuspendLayout();
+            this.StatePanel.SuspendLayout();
+            this.ClientIdPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // QuitButton
@@ -151,44 +156,13 @@ namespace StatusMaker
             this.ProgramNameLabel.TabIndex = 99;
             this.ProgramNameLabel.Text = "Status Maker";
             // 
-            // StateBox
-            // 
-            this.StateBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.StateBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.StateBox.ForeColor = System.Drawing.Color.White;
-            this.StateBox.Location = new System.Drawing.Point(9, 32);
-            this.StateBox.Name = "StateBox";
-            this.StateBox.Size = new System.Drawing.Size(100, 24);
-            this.StateBox.TabIndex = 0;
-            this.StateBox.TabStop = false;
-            // 
-            // StateLabel
-            // 
-            this.StateLabel.AutoSize = true;
-            this.StateLabel.Location = new System.Drawing.Point(4, 4);
-            this.StateLabel.Name = "StateLabel";
-            this.StateLabel.Size = new System.Drawing.Size(51, 25);
-            this.StateLabel.TabIndex = 99;
-            this.StateLabel.Text = "State";
-            // 
-            // StatePanel
-            // 
-            this.StatePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.StatePanel.Controls.Add(this.StateLabel);
-            this.StatePanel.Controls.Add(this.StateBox);
-            this.StatePanel.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatePanel.Location = new System.Drawing.Point(12, 50);
-            this.StatePanel.Name = "StatePanel";
-            this.StatePanel.Size = new System.Drawing.Size(119, 66);
-            this.StatePanel.TabIndex = 99;
-            // 
             // LargeKeyPanel
             // 
             this.LargeKeyPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.LargeKeyPanel.Controls.Add(this.LargeKeyLabel);
             this.LargeKeyPanel.Controls.Add(this.LargeKeyBox);
             this.LargeKeyPanel.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LargeKeyPanel.Location = new System.Drawing.Point(12, 122);
+            this.LargeKeyPanel.Location = new System.Drawing.Point(12, 194);
             this.LargeKeyPanel.Name = "LargeKeyPanel";
             this.LargeKeyPanel.Size = new System.Drawing.Size(119, 66);
             this.LargeKeyPanel.TabIndex = 99;
@@ -219,7 +193,7 @@ namespace StatusMaker
             this.LargeTextPanel.Controls.Add(this.LargeTextLabel);
             this.LargeTextPanel.Controls.Add(this.LargeTextBox);
             this.LargeTextPanel.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LargeTextPanel.Location = new System.Drawing.Point(12, 194);
+            this.LargeTextPanel.Location = new System.Drawing.Point(12, 266);
             this.LargeTextPanel.Name = "LargeTextPanel";
             this.LargeTextPanel.Size = new System.Drawing.Size(119, 66);
             this.LargeTextPanel.TabIndex = 99;
@@ -250,7 +224,7 @@ namespace StatusMaker
             this.SmallTextPanel.Controls.Add(this.SmallTextLabel);
             this.SmallTextPanel.Controls.Add(this.SmallTextBox);
             this.SmallTextPanel.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SmallTextPanel.Location = new System.Drawing.Point(137, 194);
+            this.SmallTextPanel.Location = new System.Drawing.Point(137, 266);
             this.SmallTextPanel.Name = "SmallTextPanel";
             this.SmallTextPanel.Size = new System.Drawing.Size(119, 66);
             this.SmallTextPanel.TabIndex = 99;
@@ -281,7 +255,7 @@ namespace StatusMaker
             this.SmallKeyPanel.Controls.Add(this.SmallKeyLabel);
             this.SmallKeyPanel.Controls.Add(this.SmallKeyBox);
             this.SmallKeyPanel.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SmallKeyPanel.Location = new System.Drawing.Point(137, 122);
+            this.SmallKeyPanel.Location = new System.Drawing.Point(137, 194);
             this.SmallKeyPanel.Name = "SmallKeyPanel";
             this.SmallKeyPanel.Size = new System.Drawing.Size(119, 66);
             this.SmallKeyPanel.TabIndex = 99;
@@ -312,7 +286,7 @@ namespace StatusMaker
             this.DetailsPanel.Controls.Add(this.DetailsLabel);
             this.DetailsPanel.Controls.Add(this.DetailsBox);
             this.DetailsPanel.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DetailsPanel.Location = new System.Drawing.Point(137, 50);
+            this.DetailsPanel.Location = new System.Drawing.Point(137, 122);
             this.DetailsPanel.Name = "DetailsPanel";
             this.DetailsPanel.Size = new System.Drawing.Size(119, 66);
             this.DetailsPanel.TabIndex = 99;
@@ -340,25 +314,13 @@ namespace StatusMaker
             // OptionsPanel
             // 
             this.OptionsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.OptionsPanel.Controls.Add(this.InfoLabel);
             this.OptionsPanel.Controls.Add(this.HasTimeCheckBox);
             this.OptionsPanel.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OptionsPanel.Location = new System.Drawing.Point(11, 266);
+            this.OptionsPanel.Location = new System.Drawing.Point(11, 338);
             this.OptionsPanel.Name = "OptionsPanel";
             this.OptionsPanel.Size = new System.Drawing.Size(120, 66);
             this.OptionsPanel.TabIndex = 100;
-            // 
-            // ButtonsPanel
-            // 
-            this.ButtonsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.ButtonsPanel.Controls.Add(this.RestartButton);
-            this.ButtonsPanel.Controls.Add(this.LaunchButton);
-            this.ButtonsPanel.Controls.Add(this.LoadButton);
-            this.ButtonsPanel.Controls.Add(this.SaveButton);
-            this.ButtonsPanel.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonsPanel.Location = new System.Drawing.Point(137, 266);
-            this.ButtonsPanel.Name = "ButtonsPanel";
-            this.ButtonsPanel.Size = new System.Drawing.Size(120, 66);
-            this.ButtonsPanel.TabIndex = 101;
             // 
             // HasTimeCheckBox
             // 
@@ -372,6 +334,33 @@ namespace StatusMaker
             this.HasTimeCheckBox.Text = "Time?";
             this.HasTimeCheckBox.UseVisualStyleBackColor = true;
             // 
+            // ButtonsPanel
+            // 
+            this.ButtonsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.ButtonsPanel.Controls.Add(this.UpdateButton);
+            this.ButtonsPanel.Controls.Add(this.LaunchButton);
+            this.ButtonsPanel.Controls.Add(this.LoadButton);
+            this.ButtonsPanel.Controls.Add(this.SaveButton);
+            this.ButtonsPanel.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonsPanel.Location = new System.Drawing.Point(137, 338);
+            this.ButtonsPanel.Name = "ButtonsPanel";
+            this.ButtonsPanel.Size = new System.Drawing.Size(120, 66);
+            this.ButtonsPanel.TabIndex = 101;
+            // 
+            // UpdateButton
+            // 
+            this.UpdateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.UpdateButton.Enabled = false;
+            this.UpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateButton.Location = new System.Drawing.Point(56, 8);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(59, 22);
+            this.UpdateButton.TabIndex = 103;
+            this.UpdateButton.TabStop = false;
+            this.UpdateButton.Text = "Update";
+            this.UpdateButton.UseVisualStyleBackColor = false;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
+            // 
             // LaunchButton
             // 
             this.LaunchButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
@@ -383,18 +372,7 @@ namespace StatusMaker
             this.LaunchButton.TabStop = false;
             this.LaunchButton.Text = "Launch";
             this.LaunchButton.UseVisualStyleBackColor = false;
-            // 
-            // SaveButton
-            // 
-            this.SaveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SaveButton.Location = new System.Drawing.Point(7, 8);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(43, 22);
-            this.SaveButton.TabIndex = 101;
-            this.SaveButton.TabStop = false;
-            this.SaveButton.Text = "Save";
-            this.SaveButton.UseVisualStyleBackColor = false;
+            this.LaunchButton.Click += new System.EventHandler(this.LaunchButton_Click);
             // 
             // LoadButton
             // 
@@ -408,25 +386,98 @@ namespace StatusMaker
             this.LoadButton.Text = "Load";
             this.LoadButton.UseVisualStyleBackColor = false;
             // 
-            // RestartButton
+            // SaveButton
             // 
-            this.RestartButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.RestartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RestartButton.Location = new System.Drawing.Point(56, 8);
-            this.RestartButton.Name = "RestartButton";
-            this.RestartButton.Size = new System.Drawing.Size(59, 22);
-            this.RestartButton.TabIndex = 103;
-            this.RestartButton.TabStop = false;
-            this.RestartButton.Text = "Restart";
-            this.RestartButton.UseVisualStyleBackColor = false;
+            this.SaveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveButton.Location = new System.Drawing.Point(7, 8);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(43, 22);
+            this.SaveButton.TabIndex = 101;
+            this.SaveButton.TabStop = false;
+            this.SaveButton.Text = "Save";
+            this.SaveButton.UseVisualStyleBackColor = false;
+            // 
+            // StateBox
+            // 
+            this.StateBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.StateBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.StateBox.ForeColor = System.Drawing.Color.White;
+            this.StateBox.Location = new System.Drawing.Point(9, 32);
+            this.StateBox.Name = "StateBox";
+            this.StateBox.Size = new System.Drawing.Size(100, 24);
+            this.StateBox.TabIndex = 0;
+            this.StateBox.TabStop = false;
+            // 
+            // StateLabel
+            // 
+            this.StateLabel.AutoSize = true;
+            this.StateLabel.Location = new System.Drawing.Point(4, 4);
+            this.StateLabel.Name = "StateLabel";
+            this.StateLabel.Size = new System.Drawing.Size(51, 25);
+            this.StateLabel.TabIndex = 99;
+            this.StateLabel.Text = "State";
+            // 
+            // StatePanel
+            // 
+            this.StatePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.StatePanel.Controls.Add(this.StateLabel);
+            this.StatePanel.Controls.Add(this.StateBox);
+            this.StatePanel.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatePanel.Location = new System.Drawing.Point(12, 122);
+            this.StatePanel.Name = "StatePanel";
+            this.StatePanel.Size = new System.Drawing.Size(119, 66);
+            this.StatePanel.TabIndex = 99;
+            // 
+            // ClientIdPanel
+            // 
+            this.ClientIdPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.ClientIdPanel.Controls.Add(this.CliendIdLabel);
+            this.ClientIdPanel.Controls.Add(this.CliendIdBox);
+            this.ClientIdPanel.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientIdPanel.Location = new System.Drawing.Point(12, 50);
+            this.ClientIdPanel.Name = "ClientIdPanel";
+            this.ClientIdPanel.Size = new System.Drawing.Size(244, 66);
+            this.ClientIdPanel.TabIndex = 100;
+            // 
+            // CliendIdLabel
+            // 
+            this.CliendIdLabel.AutoSize = true;
+            this.CliendIdLabel.Location = new System.Drawing.Point(4, 4);
+            this.CliendIdLabel.Name = "CliendIdLabel";
+            this.CliendIdLabel.Size = new System.Drawing.Size(79, 25);
+            this.CliendIdLabel.TabIndex = 99;
+            this.CliendIdLabel.Text = "CliendID";
+            // 
+            // CliendIdBox
+            // 
+            this.CliendIdBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.CliendIdBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CliendIdBox.ForeColor = System.Drawing.Color.White;
+            this.CliendIdBox.Location = new System.Drawing.Point(9, 32);
+            this.CliendIdBox.Name = "CliendIdBox";
+            this.CliendIdBox.Size = new System.Drawing.Size(225, 24);
+            this.CliendIdBox.TabIndex = 0;
+            this.CliendIdBox.TabStop = false;
+            // 
+            // InfoLabel
+            // 
+            this.InfoLabel.AutoSize = true;
+            this.InfoLabel.Font = new System.Drawing.Font("Nirmala UI", 8F);
+            this.InfoLabel.Location = new System.Drawing.Point(7, 32);
+            this.InfoLabel.Name = "InfoLabel";
+            this.InfoLabel.Size = new System.Drawing.Size(75, 26);
+            this.InfoLabel.TabIndex = 1;
+            this.InfoLabel.Text = "Current User:\r\nNULL";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(268, 346);
+            this.ClientSize = new System.Drawing.Size(268, 418);
             this.ControlBox = false;
+            this.Controls.Add(this.ClientIdPanel);
             this.Controls.Add(this.ButtonsPanel);
             this.Controls.Add(this.OptionsPanel);
             this.Controls.Add(this.SmallTextPanel);
@@ -445,8 +496,6 @@ namespace StatusMaker
             this.TrayStripMenu.ResumeLayout(false);
             this.TopPanel.ResumeLayout(false);
             this.TopPanel.PerformLayout();
-            this.StatePanel.ResumeLayout(false);
-            this.StatePanel.PerformLayout();
             this.LargeKeyPanel.ResumeLayout(false);
             this.LargeKeyPanel.PerformLayout();
             this.LargeTextPanel.ResumeLayout(false);
@@ -460,6 +509,10 @@ namespace StatusMaker
             this.OptionsPanel.ResumeLayout(false);
             this.OptionsPanel.PerformLayout();
             this.ButtonsPanel.ResumeLayout(false);
+            this.StatePanel.ResumeLayout(false);
+            this.StatePanel.PerformLayout();
+            this.ClientIdPanel.ResumeLayout(false);
+            this.ClientIdPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -474,9 +527,6 @@ namespace StatusMaker
         private System.Windows.Forms.ToolStripMenuItem quitStatusMakerToolStripMenuItem;
         private System.Windows.Forms.Panel TopPanel;
         private System.Windows.Forms.Label ProgramNameLabel;
-        private System.Windows.Forms.TextBox StateBox;
-        private System.Windows.Forms.Label StateLabel;
-        private System.Windows.Forms.Panel StatePanel;
         private System.Windows.Forms.Panel LargeKeyPanel;
         private System.Windows.Forms.Label LargeKeyLabel;
         private System.Windows.Forms.TextBox LargeKeyBox;
@@ -498,7 +548,14 @@ namespace StatusMaker
         private System.Windows.Forms.Button LoadButton;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button LaunchButton;
-        private System.Windows.Forms.Button RestartButton;
+        private System.Windows.Forms.Button UpdateButton;
+        private System.Windows.Forms.TextBox StateBox;
+        private System.Windows.Forms.Label StateLabel;
+        private System.Windows.Forms.Panel StatePanel;
+        private System.Windows.Forms.Panel ClientIdPanel;
+        private System.Windows.Forms.Label CliendIdLabel;
+        private System.Windows.Forms.TextBox CliendIdBox;
+        private System.Windows.Forms.Label InfoLabel;
     }
 }
 
