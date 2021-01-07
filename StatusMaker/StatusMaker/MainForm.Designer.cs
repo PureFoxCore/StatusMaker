@@ -30,12 +30,13 @@ namespace StatusMaker
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.QuitButton = new System.Windows.Forms.Button();
             this.HideButton = new System.Windows.Forms.Button();
             this.SysTrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.TrayStripMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.showStatusMakerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quitStatusMakerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShowToolStripButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.QuitToolStripButton = new System.Windows.Forms.ToolStripMenuItem();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.ProgramNameLabel = new System.Windows.Forms.Label();
             this.LargeKeyPanel = new System.Windows.Forms.Panel();
@@ -54,6 +55,7 @@ namespace StatusMaker
             this.DetailsLabel = new System.Windows.Forms.Label();
             this.DetailsBox = new System.Windows.Forms.TextBox();
             this.OptionsPanel = new System.Windows.Forms.Panel();
+            this.InfoLabel = new System.Windows.Forms.Label();
             this.HasTimeCheckBox = new System.Windows.Forms.CheckBox();
             this.ButtonsPanel = new System.Windows.Forms.Panel();
             this.UpdateButton = new System.Windows.Forms.Button();
@@ -66,7 +68,6 @@ namespace StatusMaker
             this.ClientIdPanel = new System.Windows.Forms.Panel();
             this.CliendIdLabel = new System.Windows.Forms.Label();
             this.CliendIdBox = new System.Windows.Forms.TextBox();
-            this.InfoLabel = new System.Windows.Forms.Label();
             this.TrayStripMenu.SuspendLayout();
             this.TopPanel.SuspendLayout();
             this.LargeKeyPanel.SuspendLayout();
@@ -104,33 +105,38 @@ namespace StatusMaker
             this.HideButton.TabStop = false;
             this.HideButton.Text = "—";
             this.HideButton.UseVisualStyleBackColor = false;
+            this.HideButton.Click += new System.EventHandler(this.HideButton_Click);
             // 
             // SysTrayIcon
             // 
             this.SysTrayIcon.ContextMenuStrip = this.TrayStripMenu;
+            this.SysTrayIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("SysTrayIcon.Icon")));
             this.SysTrayIcon.Text = "StatusMaker";
             this.SysTrayIcon.Visible = true;
+            this.SysTrayIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SysTrayIcon_MouseClick);
             // 
             // TrayStripMenu
             // 
-            this.TrayStripMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.TrayStripMenu.BackColor = System.Drawing.Color.White;
             this.TrayStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showStatusMakerToolStripMenuItem,
-            this.quitStatusMakerToolStripMenuItem});
+            this.ShowToolStripButton,
+            this.QuitToolStripButton});
             this.TrayStripMenu.Name = "TrayStripMenu";
-            this.TrayStripMenu.Size = new System.Drawing.Size(172, 48);
+            this.TrayStripMenu.Size = new System.Drawing.Size(206, 48);
             // 
-            // showStatusMakerToolStripMenuItem
+            // ShowToolStripButton
             // 
-            this.showStatusMakerToolStripMenuItem.Name = "showStatusMakerToolStripMenuItem";
-            this.showStatusMakerToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.showStatusMakerToolStripMenuItem.Text = "Show StatusMaker";
+            this.ShowToolStripButton.Name = "ShowToolStripButton";
+            this.ShowToolStripButton.Size = new System.Drawing.Size(205, 22);
+            this.ShowToolStripButton.Text = "Show | Hide StatusMaker";
+            this.ShowToolStripButton.Click += new System.EventHandler(this.ShowToolStripButton_Click);
             // 
-            // quitStatusMakerToolStripMenuItem
+            // QuitToolStripButton
             // 
-            this.quitStatusMakerToolStripMenuItem.Name = "quitStatusMakerToolStripMenuItem";
-            this.quitStatusMakerToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.quitStatusMakerToolStripMenuItem.Text = "Quit StatusMaker";
+            this.QuitToolStripButton.Name = "QuitToolStripButton";
+            this.QuitToolStripButton.Size = new System.Drawing.Size(205, 22);
+            this.QuitToolStripButton.Text = "Quit StatusMaker";
+            this.QuitToolStripButton.Click += new System.EventHandler(this.QuitToolStripButton_Click);
             // 
             // TopPanel
             // 
@@ -322,6 +328,16 @@ namespace StatusMaker
             this.OptionsPanel.Size = new System.Drawing.Size(120, 66);
             this.OptionsPanel.TabIndex = 100;
             // 
+            // InfoLabel
+            // 
+            this.InfoLabel.AutoSize = true;
+            this.InfoLabel.Font = new System.Drawing.Font("Nirmala UI", 8F);
+            this.InfoLabel.Location = new System.Drawing.Point(7, 32);
+            this.InfoLabel.Name = "InfoLabel";
+            this.InfoLabel.Size = new System.Drawing.Size(75, 26);
+            this.InfoLabel.TabIndex = 1;
+            this.InfoLabel.Text = "Current User:\r\nNULL";
+            // 
             // HasTimeCheckBox
             // 
             this.HasTimeCheckBox.AutoSize = true;
@@ -385,6 +401,7 @@ namespace StatusMaker
             this.LoadButton.TabStop = false;
             this.LoadButton.Text = "Load";
             this.LoadButton.UseVisualStyleBackColor = false;
+            this.LoadButton.Click += new System.EventHandler(this.LoadButton_Click);
             // 
             // SaveButton
             // 
@@ -397,6 +414,7 @@ namespace StatusMaker
             this.SaveButton.TabStop = false;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = false;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // StateBox
             // 
@@ -460,16 +478,6 @@ namespace StatusMaker
             this.CliendIdBox.TabIndex = 0;
             this.CliendIdBox.TabStop = false;
             // 
-            // InfoLabel
-            // 
-            this.InfoLabel.AutoSize = true;
-            this.InfoLabel.Font = new System.Drawing.Font("Nirmala UI", 8F);
-            this.InfoLabel.Location = new System.Drawing.Point(7, 32);
-            this.InfoLabel.Name = "InfoLabel";
-            this.InfoLabel.Size = new System.Drawing.Size(75, 26);
-            this.InfoLabel.TabIndex = 1;
-            this.InfoLabel.Text = "Current User:\r\nNULL";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -490,6 +498,7 @@ namespace StatusMaker
             this.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
@@ -523,8 +532,8 @@ namespace StatusMaker
         private System.Windows.Forms.Button HideButton;
         private System.Windows.Forms.NotifyIcon SysTrayIcon;
         private System.Windows.Forms.ContextMenuStrip TrayStripMenu;
-        private System.Windows.Forms.ToolStripMenuItem showStatusMakerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quitStatusMakerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ShowToolStripButton;
+        private System.Windows.Forms.ToolStripMenuItem QuitToolStripButton;
         private System.Windows.Forms.Panel TopPanel;
         private System.Windows.Forms.Label ProgramNameLabel;
         private System.Windows.Forms.Panel LargeKeyPanel;
