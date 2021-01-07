@@ -185,6 +185,7 @@ namespace StatusMaker
             SaveFileDialog fileDialog = new SaveFileDialog();
             fileDialog.Filter = "Config File|*.json";
             fileDialog.RestoreDirectory = true;
+            fileDialog.InitialDirectory = Application.ExecutablePath;
 
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
